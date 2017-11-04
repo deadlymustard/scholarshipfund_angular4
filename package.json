@@ -4,10 +4,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "concurrently \"npm run build\" \"npm run server\"",
+    "build": "ng build -op dist -w",
     "test": "ng test",
     "lint": "ng lint",
+    "server": "cd src/api && nodemon server.js",
     "e2e": "ng e2e"
   },
   "private": true,
