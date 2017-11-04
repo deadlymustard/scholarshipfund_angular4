@@ -1,0 +1,29 @@
+.navbar {
+    border: none;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    background: white;
+    padding: 0px;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+  
+  
+}
+
+.navbar a {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 18pt;
+    color: black;
+    
+}
+
+ul.nav a:hover { color: black}

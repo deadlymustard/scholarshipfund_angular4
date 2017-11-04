@@ -1,0 +1,281 @@
+p, li {
+	font-size: 16px;
+}
+
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+.border-left {
+    border-left: 2px solid black;
+}
+
+.address-paragraph p {
+	font-size: 12pt !important;
+}
+
+form {
+	padding: 15px;
+}
+
+.content {
+	padding-top: 50px;
+		padding-left: 120px;
+	padding-right: 120px;
+	min-height: 1000px;
+}
+
+.content-row {
+	padding-top: 40px;
+}
+
+.event-details {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+
+
+
+.splash-image {
+	height: 300px;
+	background: url(../img/field.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+}
+
+
+
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons .sr-only {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+
+
+ul.share-buttons img{
+  width: 32px;
+}
+
+.navbar-toggle {
+	margin-right: 20px;
+}
+
+#footer-logo {
+	width: 33px;
+	height: 33px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("../img/KG_WiffleBall_Logo_FINAL-01.png");
+}
+
+.footer-text {
+	font-size: 10px;
+}
+
+.social-text {
+	font-size: 10px;
+	margin-top:11px;
+}
+
+.share {
+	text-align: left;
+}
+
+.logo {
+	position: absolute;
+	left: 50%;
+	width: 350px;
+	height: 350px;
+	background-image: url("../img/KG_WiffleBall_Logo_FINAL-01.png");
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+
+
+
+button {
+	margin-top: 10px;
+}
+
+
+
+
+
+.body-wrapper {
+	min-height: 1000px;
+}
+
+
+
+.container {
+padding: 0px;
+	}
+
+.container-fluid {
+	padding: 0px;
+}
+
+.container-fluid .navbar {
+	padding: 0px;
+}
+
+.img-rounded {
+	 border-radius: 2.5%;
+}
+
+
+
+
+
+
+.container-body {
+	height:200%;
+	min-height: 200%;
+
+	-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+
+	padding-top: 15px;
+	padding-bottom: 25px;
+	background-color: white;
+}
+
+.container-body p {
+	font-size: 21px;
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+.footer
+{
+    height: 65px;
+    background-color: black;
+    position: relative ;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.footer-body {
+	padding-left: 90px;
+	padding-right: 90px;
+	-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+    color: white;
+
+	padding-top: 15px;
+	background-color: black;
+}
+
+
+
+
+.rule-page {
+	max-height: 300px;
+	overflow-y: scroll;
+	border-style: groove;
+	margin: 15px;
+	padding: 15px;
+}
+
+.submission {
+	padding: 15px;
+}
+
+.totals {
+	padding: 15px;
+}
+
+.paypal {
+	padding: 15px;
+}
+
+
+
+.row-margin {
+	padding-top:10px;
+}
+
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.entry:last-of-type
+{
+    margin-bottom: 10px;
+}
+
+
+.glyphicon
+{
+    font-size: 12px;
+}
+
+.registration-header {
+	padding: 10px;
+	margin-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+
+* {
+
+
+          font-family: 'Roboto', sans-serif;
+
+}
+
+.demo {
+    width:auto;
+}
+
+.demo ul {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-bottom:0;
+}
+.demo li {
+    display: block;
+    float: left;
+    margin-right: 6px;
+    cursor:pointer;
+}
+.demo img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin-right: 50px;
+}

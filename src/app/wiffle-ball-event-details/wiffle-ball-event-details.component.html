@@ -1,0 +1,46 @@
+
+<div class="container container-body">
+  <wiffle-ball-nav></wiffle-ball-nav>
+	<div class="content">
+		<div class="row">
+			<div class="col-md-12 event-details">
+				<p>Join us in memory of Kevin Gilbert:</p>
+				<p><b>2nd Annual Kevin Gilbert Wiffle Ball Tournament</b></p>
+				<p>to benefit the Kevin Gilbert Scholarship Fund</p>
+			</div>
+		</div>
+		<div class="row location-details">
+			<div class="col-md-5">
+				<p>
+					<b>WHEN</b><br>
+					TBD<br>
+				</p>
+				<p>
+					<b>WHERE</b><br>
+					Pickell Park<br>
+					515 Main St, Whitehouse Station, NJ<br>
+				</p>
+			</div>
+			<div class="col-md-7">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+				<br>
+				<br>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p><b>REGISTRATION</b></p><br>
+				<p>Registration for the 2018 Kevin Gilbert Wiffle Ball Tournament is not currently open. To be notified when registration opens enter your email <a (click)="openDialog()">here</a>.</p><br>
+				<p>Registration is $100 per team. Registration includes a free t-shirt and a two-game gaurantee.</p><br>
+				<p>Tournament is open to everyone 16 and older.</p><br>
+				<p>Read the tournament rules and regulations <a href="/fundraiser/wiffle-ball/rules">here</a>.</p><br><br>
+				<p><b>VENUE INFORMATION</b></p><br>
+				<p>Alcohol is permitted at the pavilion only. BYOB.</p>
+				<p>There are a limited number of grills available located in the pavilion area for use on first come first serve basis. Please bring your own cooking supplies and ingredients, as they will not be provided.</p><br>
+			</div>
+		</div>
+	</div>
+</div>

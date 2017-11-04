@@ -1,0 +1,10 @@
+agm-map {
+  height: 350px;
+  width: 100%;
+}
+
+app-wiffle-ball-event-details-subscribe-dialog {
+    position: absolute;
+    top:0;
+    left:0;
+}
