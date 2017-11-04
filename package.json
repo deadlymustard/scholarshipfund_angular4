@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
     "add-stream": "^1.0.0",
+    "concurrently": "^3.5.0",
     "config": "^1.27.0",
     "core-js": "^2.4.1",
     "express-session": "^1.15.6",
