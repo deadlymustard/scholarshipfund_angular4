@@ -15,27 +15,27 @@ export class RegisterService {
 
 
   submitTeam(color: string, league: string) {
-    const apiQuery = `${serverPort}/team/color/${color}/${league}`;
+    const apiQuery = `/team/color/${color}/${league}`;
 
     return <Observable<any>> this.http.get(apiQuery, httpOptions);
   }
 
   registerTeam(team: any) {
-    const apiQuery = `${serverPort}/register`;
+    const apiQuery = `/register`;
 
     return <Observable<any>> this.http.post(apiQuery, team);
 
   }
 
   getTeamConfirmation(hash: string) {
-    const apiQuery = `${serverPort}/register/team/${hash}`;
+    const apiQuery = `/register/team/${hash}`;
 
     return <Observable<any>> this.http.get(apiQuery, httpOptions);
 
   }
 
   teamPay(teamId: string) {
-    const apiQuery = `${serverPort}/team/pay/${teamId}`;
+    const apiQuery = `/team/pay/${teamId}`;
 
     return <Observable<any>> this.http.get(apiQuery, httpOptions);
 
