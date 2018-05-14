@@ -1,0 +1,113 @@
+
+<div *ngIf="type === 'Competitive' || type === 'Friendly'" class="form-group">
+  <div class="row">
+    <div class="col-md-4 col-xs-12">
+      <label for="teamName">Team Name</label>
+      <input [(ngModel)]="teamName" type="text" class="form-control" id="teamName" aria-describedby="emailHelp" placeholder="e.g. Thundercats">
+      <small id="teamNameHelp" class="form-text text-muted">Enter your super cool team's name!</small>
+    </div>
+  </div>
+  <div class="row row-margin">
+    <div class="col-md-4 col-xs-12">
+      <label for="email">Contact Email</label>
+      <input [(ngModel)]="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="e.g. email@example.com">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+  </div>
+  <div class="row row-margin">
+    <div class="col-md-4 col-xs-12">
+      <label for="phone">Phone Number</label>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">#</span>
+        <input [(ngModel)]="phone" type="text" class="form-control" id="phone" placeholder="e.g. (555)-555-5555">
+      </div>
+    </div>
+  </div>
+  <div class="row row-margin">
+    <div class="col-md-4 col-xs-12">
+      <label>Team Color</label>
+      <select [(ngModel)]="selectedColor" class="form-control">
+        <option>Ash Grey</option>
+        <option>Azalea</option>
+        <option>Black</option>
+        <option>Carolina Blue</option>
+        <option>Daisy</option>
+        <option>Dark Heather</option>
+        <option>Electric Green</option>
+        <option>Forest Green</option>
+        <option>Gold</option>
+        <option>Graphite Heather</option>
+        <option>Heliconia</option>
+        <option>Irish Green</option>
+        <option>Jade Dome</option>
+        <option>Kelly Green</option>
+        <option>Light Blue</option>
+        <option>Light Pink</option>
+        <option>Lime</option>
+        <option>Maroon</option>
+        <option>Navy</option>
+        <option>Orange</option>
+        <option>Orchid</option>
+        <option>Purple</option>
+        <option>Red</option>
+        <option>Royal</option>
+        <option>Sand</option>
+        <option>Sapphire</option>
+        <option>Sport Grey</option>
+        <option>Tennessee Orange</option>
+        <option>Texas Orange</option>
+        <option>White</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group" id="fields">
+
+    <label class="control-label">Team Members</label>
+    <div  class="row">
+      <div class="col-md-4 col-xs-4">
+        <small class="form-text text-muted">Name</small>
+      </div>
+      <div class="col-md-3 col-xs-3">
+        <small class="form-text text-muted">Shirt Size</small>
+      </div>
+    </div>
+    <div class="controls">
+      <div *ngFor="let member of members" class="entry">
+        <div class="row">
+          <div class-col-md-4>
+          </div>
+          <div class="col-md-4 col-xs-4">
+            <input [(ngModel)]="member.name"  type="text" name="name" class="form-control" id="member1" placeholder="e.g. John/Jane Smith">
+          </div>
+          <div class="col-md-3 col-xs-3">
+            <select [(ngModel)]="member.shirt_size"  class="form-control" id="sel1" >
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+              <option>XXL</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-xs-3">
+      <button (click)="addNewMember()" class="btn btn-success btn-add" type="button">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
+      <button (click)="removeMember()" class="btn btn-danger btn-minus" type="button">
+        <span class="glyphicon glyphicon-minus"></span>
+      </button>
+    </div>
+    <div class="col-md-3 col-xs-3">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-xs-2">
+      <button (click)="submitTeam()" type="submit" class="btn btn-submit btn-primary">Submit</button>
+    </div>
+  </div>
+</div>

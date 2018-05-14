@@ -50,7 +50,7 @@ app.use(function(req, res, next) {
 
 logger.debug("Setting up routes");
 // Catch all other routes and return the index file
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../dist/index.html'));
 });
 // Setting up routes
