@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from "@angular/material/dialog";
-import { WiffleBallEventDetailsSubscribeDialogComponent } from "../wiffle-ball-event-details-subscribe-dialog/wiffle-ball-event-details-subscribe-dialog.component";
+import { MatDialog } from '@angular/material/dialog';
+import { WiffleBallEventDetailsSubscribeDialogComponent } from '../wiffle-ball-event-details-subscribe-dialog/wiffle-ball-event-details-subscribe-dialog.component';
 
 @Component({
   selector: 'app-wiffle-ball-register',
@@ -9,10 +9,14 @@ import { WiffleBallEventDetailsSubscribeDialogComponent } from "../wiffle-ball-e
 })
 export class WiffleBallRegisterComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  formType: string;
+
+  constructor(public dialog: MatDialog) {
+    this.formType = 'Select a league';
+  }
 
     openDialog(): void {
-    let dialogRef = this.dialog.open(WiffleBallEventDetailsSubscribeDialogComponent, {
+    const dialogRef = this.dialog.open(WiffleBallEventDetailsSubscribeDialogComponent, {
       width: '250px'
     });
 
@@ -23,6 +27,7 @@ export class WiffleBallRegisterComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log(this.formType);
   }
 
 }

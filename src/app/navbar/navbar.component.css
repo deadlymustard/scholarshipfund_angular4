@@ -123,7 +123,7 @@ nav {
 
 }
 
-.navbar >.container .logo, 
+.navbar >.container .logo,
 .navbar >.container-fluid .logo {
     margin-left: -175px;
     margin-top: -265px;
@@ -131,7 +131,7 @@ nav {
 }
 
 @media only screen and (max-width: 700px) {
-    .navbar>.container .logo, 
+    .navbar>.container .logo,
 		.navbar>.container-fluid .logo {
 	    margin-left: -140px;
 	    margin-top: -340px;
@@ -170,3 +170,14 @@ nav {
 	margin-left: 15px;
 }
 }
+
+@media screen and (min-width: 400px) {
+
+  .navbar-collapse .ml-auto {
+    display: inherit;
+    visibility: visible;
+  }
+
+
+}
+

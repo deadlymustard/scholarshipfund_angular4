@@ -4,6 +4,9 @@
     margin-bottom: 25px;
     background: white;
     padding: 0px;
+  display: inline-block;
+
+  text-align: center;
 }
 
 .navbar .navbar-nav {
@@ -14,8 +17,9 @@
 
 .navbar .navbar-collapse {
   text-align: center;
-  
-  
+
+
+
 }
 
 .navbar a {
@@ -23,7 +27,23 @@
     padding-right: 50px;
     font-size: 18pt;
     color: black;
-    
+    float: none;
+  display: inline-block;
+
+}
+
+.active {
+  text-decoration: underline !important;
 }
 
 ul.nav a:hover { color: black}
+
+@media only screen and (max-width: 600px) {
+  .navbar a {
+    font-size: 12pt;
+  }
+
+  .navbar {
+    text-align: left;
+  }
+}

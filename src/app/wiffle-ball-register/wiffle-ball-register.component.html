@@ -4,11 +4,22 @@
     <div class="registration-header">
       <div class="row">
         <div class="col-md-12">
-          <p>Registration for the 2017 tournament is now closed.</p>
-          <p>To be notified when registration for the 2018 Kevin Gilbert Wiffle Ball Tournament opens, please enter your email <a (click)="openDialog()">here</a>.</p><br>
+
 
         </div>
       </div>
     </div>
+    <div class="form-group">
+      <label for="sel1">
+        Choose a league! <br>
+        <span class="sub-label">Do you want to play <a href="/fundraiser/wiffle-ball/rules">friendly</a> (play for fun) OR <a href="/fundraiser/wiffle-ball/rules">competitive</a> (play to win)?</span>
+      </label>
+      <select [(ngModel)]="formType" class="form-control" id="sel1">
+        <option></option>
+        <option>Competitive</option>
+        <option>Friendly</option>
+      </select>
+    </div>
+    <app-wiffle-ball-register-form [type]="formType"></app-wiffle-ball-register-form>
   </div>
 </div>

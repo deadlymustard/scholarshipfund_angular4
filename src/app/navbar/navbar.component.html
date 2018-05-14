@@ -1,6 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
+
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#navbar" aria-expanded="false"
           aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -10,16 +11,16 @@
       </button>
     </div>
     <div class="logo"></div>
-    <div id="navbar" class="navbar-collapse collapse">
+    <div id="navbar"  [ngClass]="{'collapse': collapsed, 'navbar-collapse': collapsed}">
       <ul class="nav navbar-nav navbar-left">
-        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-        <li><a routerLink="/donate" routerLinkActive="active">Donate Here</a></li>
+        <li><a routerLink="/about" routerLinkActive="active"  (click)="toggleCollapsed()">About</a></li>
+        <li><a routerLink="/donate" routerLinkActive="active" (click)="toggleCollapsed()">Donate Here</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="fundraiser/wiffle-ball" routerLinkActive="active">Wiffle Ball Tournament</a></li>
-        <li><a routerLink="fundraiser/bingo-night" routerLinkActive="active">Bingo Fundraiser</a></li>
+        <li><a routerLink="fundraiser/wiffle-ball" routerLinkActive="active" (click)="toggleCollapsed()">Wiffle Ball Tournament</a></li>
+        <li><a routerLink="fundraiser/bingo-night" routerLinkActive="active" (click)="toggleCollapsed()">Bingo Fundraiser</a></li>
 
-        
+
       </ul>
     </div>
     <!--/.nav-collapse -->

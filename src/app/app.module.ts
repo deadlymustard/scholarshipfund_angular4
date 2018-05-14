@@ -29,6 +29,10 @@ import { BingoNightEventDetailsComponent } from './bingo-night-event-details/bin
 import { BingoNightRegisterComponent } from './bingo-night-register/bingo-night-register.component';
 import { WiffleBallEventDetailsSubscribeDialogComponent } from './wiffle-ball-event-details-subscribe-dialog/wiffle-ball-event-details-subscribe-dialog.component';
 import { MailService } from "./_services/mail.service";
+import { WiffleBallRegisterFormComponent } from './wiffle-ball-register-form/wiffle-ball-register-form.component';
+import {RegisterService} from './register.service';
+import {HttpClientModule} from '@angular/common/http';
+import { WiffleBallTeamPayComponent } from './wiffle-ball-team-pay/wiffle-ball-team-pay.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +48,15 @@ import { MailService } from "./_services/mail.service";
     WiffleBallPastTournamentComponent,
     BingoNightEventDetailsComponent,
     BingoNightRegisterComponent,
-    WiffleBallEventDetailsSubscribeDialogComponent
+    WiffleBallEventDetailsSubscribeDialogComponent,
+    WiffleBallRegisterFormComponent,
+    WiffleBallTeamPayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    HttpClientModule,
     NgxGalleryModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -64,7 +71,7 @@ import { MailService } from "./_services/mail.service";
 
   ],
   entryComponents: [ WiffleBallEventDetailsSubscribeDialogComponent ],
-  providers: [MailService, ],
+  providers: [RegisterService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

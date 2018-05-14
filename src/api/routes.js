@@ -1,4 +1,4 @@
-var mongoose = require('mongoose'); 
+var mongoose = require('mongoose');
 var hash = require('json-hash');
 
 var cfg = require('config');
@@ -32,8 +32,8 @@ var teamSchema = mongoose.Schema(
 teamSchema.static('findByHash', function (hash, callback) {
   return this.find({ hash: hash }, callback);
 });
-teamSchema.static('findByColor', function (color, callback) {
-  return this.find({ color: color }, callback);
+teamSchema.static('findByColor', function (color, league, callback) {
+  return this.find({ color: color, league: league}, callback);
 });
 
 
@@ -60,17 +60,19 @@ exports.register = function(req, res) {
   var hash_id = hash.digest(req.body);
   logger.info("Generated Hash:" + hash_id);
 
+
+
   // Create a new team based on the incoming request data
   var Team = mongoose.model('Team', teamSchema, 'teams');
   var new_team = new Team(
     {
-      hash: hash_id, 
-      name: req.body.name, 
+      hash: hash_id,
+      name: req.body.name,
       email: req.body.email,
-      phone: req.body.phone, 
-      members: req.body.members, 
-      color: req.body.color, 
-      price: req.body.price, 
+      phone: req.body.phone,
+      members: req.body.members,
+      color: req.body.color,
+      price: req.body.price,
       league: req.body.league,
       paid: false
     }
@@ -92,13 +94,13 @@ exports.register = function(req, res) {
         team_phone: new_team.phone,
         team_members: new_team.members[0],
         price_information: new_team.price,
-        payment_url: 'http://' + host + '/#/register/team/' + new_team.hash
+        payment_url: 'http://' + host + '/fundraiser/wiffle-ball/register/team/' + new_team.hash
       };
 
       // Define mail option metadata
       var mailOptions = {
-        from: 'ktgwiff@gmail.com', 
-        to: new_team.email + ', ktgwiff@gmail.com',  
+        from: 'ktgwiff@gmail.com',
+        to: new_team.email + ', ktgwiff@gmail.com',
         subject: 'Kevin Gilbert Wiffle Ball Tournament Registration Confirmation'
       };
 
@@ -107,7 +109,7 @@ exports.register = function(req, res) {
         if (err)  return logger.error("Error sending confirmation mail template:\n" + err);
       });
 
-      res.send(new_team);   
+      res.send(new_team);
   });
 }
 
@@ -145,8 +147,8 @@ exports.order = function(req, res) {
 
       // Define mail option metadata
       var mailOptions = {
-        from: 'ktgwiff@gmail.com', 
-        to: new_order.email,  
+        from: 'ktgwiff@gmail.com',
+        to: new_order.email,
         subject: 'Kevin Gilbert Wiffle Ball Tournament Registration Confirmation'
       };
 
@@ -161,7 +163,7 @@ exports.order = function(req, res) {
         if (err) return logger.error("Error sending registered mail template:\n" + err);
       });
 
-      res.send(new_order);   
+      res.send(new_order);
   });
 }
 
@@ -183,13 +185,14 @@ exports.register_team = function(req, res) {
 exports.color = function(req, res) {
     var grabTeam = mongoose.model('Team', teamSchema);
 
-    grabTeam.findByColor(req.params.color, function(err, teams) {
+    grabTeam.findByColor(req.params.color, req.params.league, function(err, teams) {
         if(teams.length > 0) {
-            res.send('false');
+            res.send(false);
         } else {
-            res.send('true');
+            res.send(true);
         }
     });
+
 };
 
 // Update a team to status of 'paid'

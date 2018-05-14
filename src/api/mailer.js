@@ -29,7 +29,9 @@ var readHTMLFile = function(path, callback) {
     });
 };
 
+
 exports.sendMailTemplate = function(path, replacements, mailOptions, callback) {
+  console.log("hello");
 	readHTMLFile(__dirname + path, function(err, html) {
         var template = handlebars.compile(html);
         var htmlToSend = template(replacements);
