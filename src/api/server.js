@@ -50,17 +50,18 @@ app.use(function(req, res, next) {
 
 logger.debug("Setting up routes");
 // Catch all other routes and return the index file
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../dist/index.html'));
-});
 // Setting up routes
-app.get('/', routes.index);
+
 app.post('/register', routes.register);
 app.post('/order', routes.order);
 app.post('/addToMailingList/:name', routes.addToMailingList);
 app.get('/register/team/:team_id', routes.register_team);
 app.get('/team/color/:color/:league', routes.color);
 app.get('/team/pay/:team_id', routes.pay);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../dist/index.html'));
+});
 
 // listen (start app with node server.js) ======================================
 http.createServer(app).listen(process.env.PORT || 5000);
