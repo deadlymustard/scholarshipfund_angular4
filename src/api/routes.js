@@ -91,7 +91,7 @@ exports.register = function(req, res) {
         team_name: new_team.name,
         team_email: new_team.email,
         team_phone: new_team.phone,
-        team_members: new_team.members[0],
+        team_members: new_team.members,
         price_information: new_team.price,
         payment_url: 'http://' + host + '/fundraiser/wiffle-ball/register/team/' + new_team.hash
       };
