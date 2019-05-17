@@ -1,0 +1,28 @@
+.content {
+  h3 {
+    text-align: center;
+  }
+
+  .header-divider {
+    text-align: center;
+    margin: 15px 0 15px 0;
+    font-size: 12px;
+    fa-icon {
+      color: lightskyblue;
+      margin: 0 5px;
+    }
+  }
+
+  .row {
+    img {
+      float: left;
+      padding: 0 25px 0 25px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+
+}

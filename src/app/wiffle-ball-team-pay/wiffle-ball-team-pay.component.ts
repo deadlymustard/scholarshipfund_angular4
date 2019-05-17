@@ -8,7 +8,7 @@ import {register} from 'ts-node/dist';
 @Component({
   selector: 'app-wiffle-ball-team-pay',
   templateUrl: './wiffle-ball-team-pay.component.html',
-  styleUrls: ['./wiffle-ball-team-pay.component.css']
+  styleUrls: ['./wiffle-ball-team-pay.component.scss']
 })
 export class WiffleBallTeamPayComponent implements OnInit {
 

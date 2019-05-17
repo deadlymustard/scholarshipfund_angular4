@@ -6,7 +6,7 @@ import { WiffleBallEventDetailsSubscribeDialogComponent } from "../wiffle-ball-e
 @Component({
   selector: 'app-wiffle-ball-past-tournament',
   templateUrl: './wiffle-ball-past-tournament.component.html',
-  styleUrls: ['./wiffle-ball-past-tournament.component.css']
+  styleUrls: ['./wiffle-ball-past-tournament.component.scss']
 })
 export class WiffleBallPastTournamentComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class WiffleBallPastTournamentComponent implements OnInit {
 
   ngOnInit() {
 
-    
+
 
     this.galleryOptions = [
       {
@@ -88,7 +88,7 @@ export class WiffleBallPastTournamentComponent implements OnInit {
         small: 'assets/img/pics/8.jpg',
         medium: 'assets/img/pics/8.jpg',
         big: 'assets/img/pics/8.jpg'
-      }, 
+      },
       {
         small: 'assets/img/pics/9.jpg',
         medium: 'assets/img/pics/9.jpg',

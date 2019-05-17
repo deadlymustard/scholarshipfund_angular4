@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-wiffle-ball-register-form',
   templateUrl: './wiffle-ball-register-form.component.html',
-  styleUrls: ['./wiffle-ball-register-form.component.css']
+  styleUrls: ['./wiffle-ball-register-form.component.scss']
 })
 export class WiffleBallRegisterFormComponent implements OnInit, OnChanges {
 

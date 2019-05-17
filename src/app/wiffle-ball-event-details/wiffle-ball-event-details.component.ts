@@ -6,7 +6,7 @@ import { WiffleBallEventDetailsSubscribeDialogComponent } from "../wiffle-ball-e
 @Component({
   selector: 'app-wiffle-ball-event-details',
   templateUrl: './wiffle-ball-event-details.component.html',
-  styleUrls: ['./wiffle-ball-event-details.component.css']
+  styleUrls: ['./wiffle-ball-event-details.component.scss']
 })
 export class WiffleBallEventDetailsComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class WiffleBallEventDetailsComponent implements OnInit {
 
   addedToSubscribtionMessage: string;
 
-  
+
 
   constructor(public dialog: MatDialog) { }
 
