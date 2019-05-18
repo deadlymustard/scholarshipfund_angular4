@@ -1,4 +1,5 @@
-.content {
+.about {
+  min-height: 75vh;
   h3 {
     text-align: center;
   }
@@ -16,7 +17,7 @@
   .row {
     img {
       float: left;
-      padding: 0 25px 0 25px;
+      margin-right: 20px;
     }
   }
 

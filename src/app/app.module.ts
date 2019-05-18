@@ -29,7 +29,10 @@ import {WiffleBallTeamPayComponent} from './wiffle-ball-team-pay/wiffle-ball-tea
 import {MatDialogModule, MatFormFieldModule} from "@angular/material";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { faCertificate, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
+import {AgmCoreModule} from "@agm/core";
+
 
 
 @NgModule({
@@ -61,7 +64,10 @@ import { faCertificate } from '@fortawesome/free-solid-svg-icons';
     MatFormFieldModule,
     FormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBfAdmQaDTEfg5S3wBvhLiSmt6AbbvBaL8'
+    }),
   ],
   entryComponents: [ WiffleBallEventDetailsSubscribeDialogComponent ],
   providers: [RegisterService ],
@@ -70,5 +76,7 @@ import { faCertificate } from '@fortawesome/free-solid-svg-icons';
 export class AppModule {
   constructor() {
     library.add(faCertificate);
+    library.add(faFacebookSquare);
+    library.add(faUserCircle);
   }
 }

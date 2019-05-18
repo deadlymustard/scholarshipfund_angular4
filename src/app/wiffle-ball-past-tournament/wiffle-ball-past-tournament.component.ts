@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
-import { MatDialog } from "@angular/material/dialog";
-import { WiffleBallEventDetailsSubscribeDialogComponent } from "../wiffle-ball-event-details-subscribe-dialog/wiffle-ball-event-details-subscribe-dialog.component";
+import {Component, OnInit} from '@angular/core';
+import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery';
 
 @Component({
   selector: 'app-wiffle-ball-past-tournament',
@@ -33,9 +31,9 @@ export class WiffleBallPastTournamentComponent implements OnInit {
       },
       // max-width 800
       {
-        breakpoint: 800,
+        breakpoint: 992,
         width: '100%',
-        height: '100%',
+        height: '600px',
         imagePercent: 90,
         thumbnailsPercent: 10,
         thumbnailsMargin: 10,
@@ -44,6 +42,12 @@ export class WiffleBallPastTournamentComponent implements OnInit {
       // max-width 400
       {
         breakpoint: 400,
+        width: '100%',
+        height: '600px',
+        imagePercent: 90,
+        thumbnailsPercent: 10,
+        thumbnailsMargin: 10,
+        thumbnailMargin: 10,
         preview: false
       }
     ];

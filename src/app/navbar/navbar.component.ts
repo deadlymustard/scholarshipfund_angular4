@@ -17,13 +17,14 @@ export class NavbarComponent implements OnInit {
   }
 
   collapsed = true;
+  mobile = false;
   wiffleBallLinkActive = false;
   bingoNightLinkActive = false;
 
 
   ngOnInit() {
     this.breakpointObserver.observe('(max-width: 992px').subscribe(collapsed => {
-      this.collapsed = collapsed.matches;
+      this.mobile = collapsed.matches;
     });
     this.router.events.subscribe((event: RouterEvent) => {
       if(event instanceof NavigationEnd) {
@@ -34,13 +35,13 @@ export class NavbarComponent implements OnInit {
   }
 
   routeToWiffleBall() {
-    if(!this.wiffleBallLinkActive) {
+    if(!this.wiffleBallLinkActive && !this.mobile) {
       this.router.navigateByUrl('fundraiser/wiffle-ball/details');
     }
   }
 
   routeToBingoNight() {
-    if(!this.bingoNightLinkActive) {
+    if(!this.bingoNightLinkActive && !this.mobile) {
       this.router.navigateByUrl('fundraiser/bingo-night/details');
     }
   }

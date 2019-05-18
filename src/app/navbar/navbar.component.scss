@@ -1,6 +1,13 @@
 @import "../../assets/css/mixins";
 @include navbar-black;
 
+
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: lightskyblue;
+  color: black;
+}
+
 .navbar-header {
   display: flex;
   width: 100%;
@@ -9,14 +16,22 @@
   background-position: 50% 60%;
   background-size: cover;
 
+  .avatar {
+    fa-icon {
+      float: right;
+      font-size: 32px;
+      color: white;
+    }
+  }
+
   @media (max-width: 992px) {
     height: 150px;
   }
 
   img {
     margin: 30px auto 0 auto;
-    width: 130px;
-    min-width: 130px;
+    width: 140px;
+    min-width: 140px;
     height: 160px;
     z-index: 100;
   }
@@ -26,6 +41,13 @@
   border-bottom: 4px solid lightskyblue;
   margin-bottom: 50px;
   font-size: 18px;
+
+  .avatar {
+    fa-icon {
+      font-size: 32px;
+      color: white;
+    }
+  }
 
   @media (max-width: 992px) {
     border-top: 2px solid white;
@@ -77,6 +99,15 @@
   @media (min-width: 1200px) {
     .navbar-collapse {
       max-width: 1140px;
+    }
+  }
+
+  .sign-in {
+    margin-bottom: 10px;
+
+    hr {
+      width: 100%;
+      border: .5px solid grey;
     }
   }
 }
