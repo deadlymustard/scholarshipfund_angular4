@@ -1,14 +1,38 @@
-<div class="container-fluid splash-image">
-</div>
-<div class="container-fluid">
-  <ktg-navbar></ktg-navbar>
-</div>
-<div class="body-wrapper">
+<ktg-navbar></ktg-navbar>
+<div class="container">
   <router-outlet></router-outlet>
-  
 </div>
-<div class="container-fluid footer">
-  <div class="container footer-body">
-    <small>Questions? Email us at <a href="mailto:ktgwiff@gmail.com?Subject=Question">ktgwiff@gmail.com</a>!</small>
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+  <div class="row">
+    <div class="col-12 col-md">
+      <img class="mb-2" src="../assets/img/KG_WiffleBall_Logo_FINAL-01.png" alt="" width="50" height="55">
+      <small class="d-block mb-3 text-muted">© 2017-2019</small>
+    </div>
+    <div class="col-5 col-md">
+      <h5>Scholarship Fund</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" routerLink="about">About</a></li>
+        <li><a class="text-muted" routerLink="donate">Donate</a></li>
+      </ul>
+    </div>
+    <div class="col-5 col-md">
+      <h5>Wiffle Ball</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" routerLink="fundraiser/wiffle-ball/details">Details</a></li>
+        <li><a class="text-muted" routerLink="fundraiser/wiffle-ball/rules">Rules</a></li>
+        <li><a class="text-muted" routerLink="fundraiser/wiffle-ball/register">Register</a></li>
+      </ul>
+    </div>
+    <div class="col-5 col-md">
+      <h5>Bingo Night</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" routerLink="fundraiser/bingo-night/details">Details</a></li>
+        <li><a class="text-muted" routerLink="fundraiser/bingo-night/register">Register</a></li>
+      </ul>
+    </div>
+    <!--<div class="col-3 col-sm">-->
+      <!--<fa-icon [icon]="['fab', 'facebook-square']"></fa-icon>-->
+      <!--<small class="d-block mb-3 text-muted">Find us on Facebook!</small>-->
+    <!--</div>-->
   </div>
-</div>
+</footer>

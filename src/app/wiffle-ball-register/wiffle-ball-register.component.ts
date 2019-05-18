@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { WiffleBallEventDetailsSubscribeDialogComponent } from '../wiffle-ball-event-details-subscribe-dialog/wiffle-ball-event-details-subscribe-dialog.component';
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-wiffle-ball-register',
   templateUrl: './wiffle-ball-register.component.html',
-  styleUrls: ['./wiffle-ball-register.component.css']
+  styleUrls: ['./wiffle-ball-register.component.scss']
 })
 export class WiffleBallRegisterComponent implements OnInit {
 

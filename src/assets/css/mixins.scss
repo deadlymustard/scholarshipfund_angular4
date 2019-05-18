@@ -1,0 +1,19 @@
+@mixin navbar-black {
+  .navbar-black {
+    background-color: black;
+  }
+  /* change the brand and text color */
+  .navbar-black .navbar-brand,
+  .navbar-black .navbar-text {
+    color: white;
+  }
+  /* change the link color */
+  .navbar-black .navbar-nav .nav-link {
+    color: white;
+  }
+  /* change the color of active or hovered links */
+  .navbar-black .nav-item .nav-link.active,
+  .navbar-black .nav-item:hover .nav-link {
+    color: lightskyblue;
+  }
+}

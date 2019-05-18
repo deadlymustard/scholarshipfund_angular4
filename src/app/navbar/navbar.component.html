@@ -1,29 +1,66 @@
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#navbar" aria-expanded="false"
-          aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="logo"></div>
-    <div id="navbar"  [ngClass]="{'collapse': collapsed, 'navbar-collapse': collapsed}">
-      <ul class="nav navbar-nav navbar-left">
-        <li><a routerLink="/about" routerLinkActive="active"  (click)="toggleCollapsed()">About</a></li>
-        <li><a routerLink="/donate" routerLinkActive="active" (click)="toggleCollapsed()">Donate Here</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="fundraiser/wiffle-ball" routerLinkActive="active" (click)="toggleCollapsed()">Wiffle Ball Tournament</a></li>
-        <li><a routerLink="fundraiser/bingo-night" routerLinkActive="active" (click)="toggleCollapsed()">Bingo Fundraiser</a></li>
-
-
-      </ul>
-    </div>
-    <!--/.nav-collapse -->
+<div class="navbar-header">
+  <img *ngIf="mobile" src="../../assets/img/KG_WiffleBall_Logo_FINAL-01.png"/>
+  <div *ngIf="!mobile" class="avatar float-right">
+    <fa-icon [icon]="'user-circle'"></fa-icon>
   </div>
-  <!--/.container-fluid -->
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-black">
+  <button class="navbar-toggler"
+          type="button"
+          (click)="collapsed = !collapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div *ngIf="mobile" class="avatar">
+    <fa-icon [icon]="'user-circle'"></fa-icon>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNav" [ngClass]="{show: collapsed}">
+    <ul class="navbar-nav navbar-nav-left">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="collapsed = false">About Kevin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/donate" routerLinkActive="active" (click)="collapsed = false">Donate Here</a>
+      </li>
+    </ul>
+    <img *ngIf="!mobile" src="../../assets/img/KG_WiffleBall_Logo_FINAL-01.png"/>
+    <ul class="navbar-nav navbar-nav-right">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle" id="navbarWiffleBallDropdown"
+          (click)="routeToWiffleBall()" [ngClass]="{ active: wiffleBallLinkActive === true }"
+          role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Wiffle Ball
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/details" routerLinkActive="active"
+             (click)="collapsed = false">Event Details</a>
+          <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/rules" routerLinkActive="active"
+             (click)="collapsed = false">Rules</a>
+          <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/register" routerLinkActive="active"
+             (click)="collapsed = false">Register</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/2017" routerLinkActive="active"
+             (click)="collapsed = false">2017 Tournament</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle" id="navbarBingoNightDropdown"
+          (click)="routeToBingoNight()" [ngClass]="{ active: bingoNightLinkActive === true }"
+          role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bingo Night
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="fundraiser/bingo-night/details" routerLinkActive="active">Event Details</a>
+          <a class="dropdown-item" routerLink="fundraiser/bingo-night/register" routerLinkActive="active">Register</a>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="mobile" class="sign-in">
+      <hr/>
+      <a class="text-white">Sign in</a>
+      <span class="d-inline text-muted"> or </span>
+      <a class="text-white">Sign up</a>
+    </div>
+  </div>
 </nav>

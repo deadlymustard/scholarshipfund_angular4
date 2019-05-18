@@ -1,61 +1,38 @@
-<div id="main" class="container container-body">
-  <div class="content">
-    <div class="row">
-      <div class="col-md-12">
-        <p>
-          Donate to support the Kevin Gilbert
-          Scholarship Fund's goal to give high school students the means to live their dream.
-        </p>
+<div class="donate">
+  <h3>Donate</h3>
+  <div class="header-divider">
+    <fa-icon [icon]="'certificate'"></fa-icon>
+    <fa-icon [icon]="'certificate'"></fa-icon>
+    <fa-icon [icon]="'certificate'"></fa-icon>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        Donate to support the Kevin Gilbert
+        Scholarship Fund's goal to give high school students the means to live their dream.
+      </p>
 
-        <form id="player_form">
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-12 col-xs-12">
-                <h2>Paypal</h2>
-              </div>
-              <div class="col-md-12 col-xs-12">
-                <label for="donationAmount">Donation Amount</label>
-                <div class="input-group">
-                  <div class="input-group-addon">$</div>
-                  <input type="number" class="form-control" [(ngModel)]="donationAmount" name="donationAmount" id="donationAmount" aria-describedby="emailHelp"
-                    placeholder="e.g. $25">
-                </div>
-                <small id="teamNameHelp" class="form-text text-muted">Enter in the amount you wish to donate!</small>
-
-                <div class="col-md-12 col-xs-12">
-                  <div class="paypal">
-                    <paypal-button [props]="paypalConfig"></paypal-button>
-                    <div id="confirm" class="hidden">
-                      <div>Ship to:</div>
-                      <div><span id="recipient"></span>, <span id="line1"></span>, <span id="city"></span></div>
-                      <div><span id="state"></span>, <span id="zip"></span>, <span id="country"></span></div>
-                      <button id="confirmButton">Donate!</button>
-                    </div>
-                    <div id="thanks" class="hidden">
-                      Thanks, <span id="thanksname"></span>!
-                    </div>
-                  </div>
-                </div>
+      <div class="paypal-payment">
+        <form id="paypalForm">
+          <h4>Paypal</h4>
+          <label for="paypalAmount">Donation Amount</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
             </div>
-            <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                <h2>Check</h2>
-              </div>
-              <div class="col-md-12 col-xs-12">
-                <p>Send a check written out to 'Kevin Gilbert Scholarship Fund' to:</p>
-                <p>Karen Gilbert<br>22 Militia Road, Whitehouse Station, NJ 08889</p>
-              </div>
-              
-              </div>
-              
-
-
+            <input type="text" class="form-control" id="paypalAmount" aria-label="Amount (to the nearest dollar)" placeholder="e.g. $25">
+            <div class="input-group-append">
+              <span class="input-group-text">.00</span>
             </div>
           </div>
+          <small id="paypalHelp" class="form-text text-muted">Enter in the amount you wish to donate!</small>
         </form>
-
-        <br>
-        <br>
+      </div>
+      <div class="check-payment">
+        <h4>Check</h4>
+        <p>Send a check written out to 'Kevin Gilbert Scholarship Fund' to:</p>
+        <span class="d-block text-muted">Karen Gilbert</span>
+        <span class="d-block text-muted">22 Militia Road, Whitehouse Station, NJ 08889</span>
       </div>
     </div>
   </div>

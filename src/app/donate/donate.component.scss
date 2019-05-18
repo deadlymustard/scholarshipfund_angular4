@@ -1,0 +1,22 @@
+.donate {
+  min-height: 75vh;
+
+  h3 {
+    text-align: center;
+  }
+  .header-divider {
+    text-align: center;
+    margin: 15px 0 15px 0;
+    font-size: 12px;
+    fa-icon {
+      color: lightskyblue;
+      margin: 0 5px;
+    }
+  }
+
+  .check-payment {
+    margin-top: 20px;
+  }
+}
+
+
