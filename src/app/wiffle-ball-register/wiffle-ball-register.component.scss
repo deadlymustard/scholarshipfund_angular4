@@ -1,7 +1,64 @@
-label{
-  font-size: 18pt
-}
+.register-tournament {
+  min-height: 75vh;
+  height: 100%;
 
-.sub-label {
-  font-size: 14pt;
+  h3 {
+    text-align: center;
+  }
+
+  .header-divider {
+    text-align: center;
+    margin: 15px 0 15px 0;
+    font-size: 12px;
+    fa-icon {
+      color: lightskyblue;
+      margin: 0 5px;
+    }
+  }
+
+  .list-group {
+    margin-bottom: 1rem;
+  }
+
+  .list-group-item {
+    min-height: 104.5px;
+  }
+
+  .list-group-item:nth-child(even) {
+    background-color: #f0fcff;
+  }
+
+  input {
+    &.ng-invalid.ng-dirty {
+      border-color: #dc3545;
+    }
+  }
+
+  select {
+    &.ng-invalid.ng-touched {
+      border-color: #dc3545;
+    }
+  }
+
+  .badge-primary {
+    color: white;
+  }
+
+  .badge-danger:hover {
+    cursor: pointer;
+  }
+
+  .badge-golden {
+    color: gold;
+  }
+
+  button {
+    color: white;
+
+    &:disabled {
+      background-color: gainsboro;
+      color: grey;
+      border-color: grey;
+    }
+  }
 }

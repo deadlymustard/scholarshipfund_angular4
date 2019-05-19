@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: lightskyblue;
+$btn-primary-color: white;
+
 @import "~bootstrap/scss/bootstrap";
 @import "~font-awesome/css/font-awesome.css";
+
+
 
 
 @media (min-width: 1200px) {
