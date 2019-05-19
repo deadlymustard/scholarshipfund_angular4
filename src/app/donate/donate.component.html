@@ -20,13 +20,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text">$</span>
             </div>
-            <input type="text" class="form-control" id="paypalAmount" aria-label="Amount (to the nearest dollar)" placeholder="e.g. $25">
-            <div class="input-group-append">
-              <span class="input-group-text">.00</span>
-            </div>
+            <input [(ngModel)]="donationAmount" type="number" class="form-control" id="paypalAmount" aria-label="Amount (to the nearest dollar)" placeholder="e.g. $25">
           </div>
           <small id="paypalHelp" class="form-text text-muted">Enter in the amount you wish to donate!</small>
         </form>
+        <div class="paypal-button">
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
       </div>
       <div class="check-payment">
         <h4>Check</h4>

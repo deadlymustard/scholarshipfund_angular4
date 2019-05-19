@@ -5,5 +5,9 @@
 
 export const environment = {
   production: false,
-  paypal_api_key: 'AYd_PiOoMb13TRjG8AQnQFvOLqZIT85fPVxAmLjlBai-N3l9ccju1NgjnMS-KerSm0eMy_YaEd6eK11d'
+  paypal_api_key: 'AYd_PiOoMb13TRjG8AQnQFvOLqZIT85fPVxAmLjlBai-N3l9ccju1NgjnMS-KerSm0eMy_YaEd6eK11d',
+  firebase: {
+    apiKey: 'AIzaSyARhi4-cfaIaFaLi_5TEDnoXeJlw60NB1E',
+    projectId: 'ktg-fund-dev'
+  }
 };

@@ -1,0 +1,28 @@
+.wiffle-ball-team-pay {
+  min-height: 75vh;
+
+  h3 {
+    text-align: center;
+  }
+
+  .header-divider {
+    text-align: center;
+    margin: 15px 0 15px 0;
+    font-size: 12px;
+    fa-icon {
+      color: lightskyblue;
+      margin: 0 5px;
+    }
+  }
+
+  .payment-paid {
+    margin-top: 20px;
+    h4 {
+      margin-bottom: 40px;
+    }
+  }
+
+  .check-total {
+    margin-bottom: 20px;
+  }
+}

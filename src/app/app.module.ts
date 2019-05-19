@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 import {NgxGalleryModule} from 'ngx-gallery';
@@ -14,7 +14,7 @@ import {AboutComponent} from './about/about.component';
 import {WiffleBallComponent} from './wiffle-ball/wiffle-ball.component';
 import {BingoNightComponent} from './bingo-night/bingo-night.component';
 import {DonateComponent} from './donate/donate.component';
-import {AppRoutingModule} from "./_modules/app-routing.module";
+import {AppRoutingModule} from "./app-routing.module";
 import {WiffleBallEventDetailsComponent} from './wiffle-ball-event-details/wiffle-ball-event-details.component';
 import {WiffleBallRulesComponent} from './wiffle-ball-rules/wiffle-ball-rules.component';
 import {WiffleBallRegisterComponent} from './wiffle-ball-register/wiffle-ball-register.component';
@@ -29,9 +29,17 @@ import {WiffleBallTeamPayComponent} from './wiffle-ball-team-pay/wiffle-ball-tea
 import {MatDialogModule, MatFormFieldModule} from "@angular/material";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCertificate, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { fas, faCertificate, faUserCircle, faStar, faUserPlus, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
 import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
 import {AgmCoreModule} from "@agm/core";
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire";
+import {AngularFireDatabaseModule} from "@angular/fire/database";
+import {NgxMaskModule} from "ngx-mask";
+import {AngularFireStorage, AngularFireStorageModule} from "@angular/fire/storage";
+import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
+import {NgxPayPalModule} from "ngx-paypal";
 
 
 
@@ -63,20 +71,33 @@ import {AgmCoreModule} from "@agm/core";
     MatDialogModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    NgxMaskModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBfAdmQaDTEfg5S3wBvhLiSmt6AbbvBaL8'
     }),
+    NgxPayPalModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
   entryComponents: [ WiffleBallEventDetailsSubscribeDialogComponent ],
-  providers: [RegisterService ],
+  providers: [
+    RegisterService,
+    AngularFirestore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor() {
+    library.add(far, fas);
     library.add(faCertificate);
     library.add(faFacebookSquare);
     library.add(faUserCircle);
+    library.add(faUserPlus);
+    library.add(faStar);
+    library.add(faTrashAlt);
   }
 }
