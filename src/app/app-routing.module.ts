@@ -10,6 +10,7 @@ import {BingoNightEventDetailsComponent} from "./bingo-night-event-details/bingo
 import {DonateComponent} from "./donate/donate.component";
 import {NgModule} from "@angular/core";
 import {TeamResolver} from "./team.resolver";
+import {RegisterResolver} from "./register.resolver";
 
 
 const routes: Routes = [
@@ -18,13 +19,15 @@ const routes: Routes = [
     { path: 'fundraiser/wiffle-ball', redirectTo: 'fundraiser/wiffle-ball/details', pathMatch: 'full' },
     { path: 'fundraiser/wiffle-ball/details', component: WiffleBallEventDetailsComponent},
     { path: 'fundraiser/wiffle-ball/rules', component: WiffleBallRulesComponent},
-    { path: 'fundraiser/wiffle-ball/register', component: WiffleBallRegisterComponent},
+    {
+      path: 'fundraiser/wiffle-ball/register',
+      component: WiffleBallRegisterComponent,
+      resolve: [RegisterResolver]
+    },
     {
       path: 'fundraiser/wiffle-ball/team/:id',
       component: WiffleBallTeamPayComponent,
-      resolve: [
-        TeamResolver
-      ]
+      resolve: [TeamResolver]
     },
     { path: 'fundraiser/wiffle-ball/2017', component: WiffleBallPastTournamentComponent},
     { path: 'fundraiser/bingo-night', redirectTo: 'fundraiser/bingo-night/details', pathMatch: 'full' },

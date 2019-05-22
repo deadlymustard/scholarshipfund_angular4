@@ -39,8 +39,8 @@
         <div class="card-header">2 - Send a check&nbsp;&nbsp;💵</div>
         <div class="card-body">
           <p class="card-text">Send a check written out to 'Kevin Gilbert Scholarship Fund' with your team name in the Memo to:</p>
-          <p class="card-text">Claire Siegrist</p>
-          <p class="card-text">241 Montgomery St., Jersey City, NJ 07302</p>
+          <p class="card-text">Karen Gilbert</p>
+          <p class="card-text">22 Militia Road, Whitehouse Station, NJ 08889</p>
         </div>
       </div>
     </div>
@@ -57,7 +57,9 @@
         <span class="text-muted d-block">Transaction Fee: ${{transactionFee.toFixed(2)}} +</span>
         <hr>
         <span class="text-muted d-block mb-5">Total: ${{finalFee}}</span>
-        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        <div class="paypal-button">
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
       </div>
     </div>
   </div>

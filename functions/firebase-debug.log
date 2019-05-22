@@ -1,0 +1,27 @@
+[debug] [2019-05-21T01:41:26.953Z] ----------------------------------------------------------------------
+[debug] [2019-05-21T01:41:26.955Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2019-05-21T01:41:26.955Z] CLI Version:   6.10.0
+[debug] [2019-05-21T01:41:26.955Z] Platform:      darwin
+[debug] [2019-05-21T01:41:26.955Z] Node Version:  v11.12.0
+[debug] [2019-05-21T01:41:26.956Z] Time:          Mon May 20 2019 21:41:26 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-05-21T01:41:26.956Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-05-21T01:41:26.964Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-05-21T01:41:26.964Z] > authorizing via signed-in user
+[debug] [2019-05-21T01:41:26.966Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ktg-fund-dev  
+ 
+[debug] [2019-05-21T01:41:27.265Z] <<< HTTP RESPONSE 200
+[info] i  Starting emulators: ["functions"]
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "11"
+[debug] [2019-05-21T01:41:27.284Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/370715090935:getServerAppConfig  
+ 
+[debug] [2019-05-21T01:41:27.489Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "/Users/rshaner/Personal Projects/scholarshipfund_angular4/functions" for Cloud Functions...
+[debug] [2019-05-21T01:41:27.762Z] Functions runtime initialized.
+[debug] [2019-05-21T01:41:27.762Z] Disabled runtime features: undefined
+[debug] [2019-05-21T01:41:28.449Z] Found google-gax at /Users/rshaner/Personal Projects/scholarshipfund_angular4/functions/node_modules/google-gax/build/src/index.js
+[debug] [2019-05-21T01:41:28.449Z] Outgoing network have been stubbed.
+[debug] [2019-05-21T01:41:28.584Z] Checked functions.config()
+[debug] [2019-05-21T01:41:28.839Z] firebase-admin has been stubbed.
+[info] Ignoring trigger "createTeam" because the Cloud Firestore emulator is not running.

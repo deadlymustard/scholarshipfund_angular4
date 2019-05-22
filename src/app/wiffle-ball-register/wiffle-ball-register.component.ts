@@ -5,7 +5,8 @@ import {Member, ShirtSize} from "../member.model";
 import {League, Team} from "../team.model";
 import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TeamService} from "../team.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {TeamValidator} from "../validators/team.validator";
 
 @Component({
   selector: 'app-wiffle-ball-register',
@@ -19,6 +20,7 @@ export class WiffleBallRegisterComponent implements OnInit {
   team: Team;
   captain: Member;
   members: Member[] = [];
+  colors: String[] = [];
 
   minimumTeamMembers: number = 3;
 
@@ -29,7 +31,9 @@ export class WiffleBallRegisterComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private router: Router,
+    private route: ActivatedRoute,
     private teamService: TeamService,
+    private teamValidator: TeamValidator,
     public fb: FormBuilder
   ) {
 
@@ -42,6 +46,9 @@ export class WiffleBallRegisterComponent implements OnInit {
         shirtSize: ShirtSize.M,
         isCaptain: true
     } as Member;
+
+    this.colors = this.route.snapshot.data[0];
+
   }
 
     openDialog(): void {
@@ -57,8 +64,8 @@ export class WiffleBallRegisterComponent implements OnInit {
 
   ngOnInit() {
     this.teamFormGroup = this.fb.group({
-      name: ['Thundercats', Validators.required],
-      shirtColor: ['M'],
+      name: ['Thundercats', Validators.required, this.teamValidator.validateTeamName()],
+      shirtColor: [this.colors[0]],
       league: [League.COMPETITIVE],
       captain: this.fb.group({
         name: ['Jon', Validators.required],
@@ -81,6 +88,7 @@ export class WiffleBallRegisterComponent implements OnInit {
 
     this.teamFormGroup.valueChanges.subscribe(() => {
       this.team = this.getFormValues();
+      console.log(this.teamFormGroup.get('name').errors);
     })
   }
 
@@ -105,6 +113,8 @@ export class WiffleBallRegisterComponent implements OnInit {
 
 
     team.registrationFee = (baseFee * (1.029) +  .30).toString();
+
+    console.log(team);
 
     return team;
   }

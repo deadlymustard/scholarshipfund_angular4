@@ -28,12 +28,16 @@
     background-color: #f0fcff;
   }
 
-  input {
-    &.ng-invalid.ng-dirty {
-      border-color: #dc3545;
+
+  form {
+    &.ng-dirty {
+      input {
+        &.ng-invalid {
+          border-color: #dc3545;
+        }
+      }
     }
   }
-
   select {
     &.ng-invalid.ng-touched {
       border-color: #dc3545;
