@@ -42,7 +42,6 @@ import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore"
 import {NgxPayPalModule} from "ngx-paypal";
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -29,7 +29,6 @@ export class WiffleBallEventDetailsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.addedToSubscribtionMessage = "You've been added to the mailing list!";
     });
   }

@@ -1,6 +1,0 @@
-{
-	"env": "production",
-	"port": 5000,
-	"mongoDatabaseName": "prod",
-	"confirmationEmailTarget": "ktgwiff@gmail.com"
-}

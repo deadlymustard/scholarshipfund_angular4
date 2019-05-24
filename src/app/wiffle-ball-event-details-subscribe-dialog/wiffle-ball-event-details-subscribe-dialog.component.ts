@@ -18,7 +18,6 @@ export class WiffleBallEventDetailsSubscribeDialogComponent implements OnInit {
   }
 
   sendEmail = () => {
-    console.log(this.email);
     //this.mailerService.addToMailingList(this.email);
   }
 

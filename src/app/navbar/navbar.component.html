@@ -1,8 +1,5 @@
 <div class="navbar-header">
   <img *ngIf="mobile" src="../../assets/img/KG_WiffleBall_Logo_FINAL-01.png"/>
-  <div *ngIf="!mobile" class="avatar float-right">
-    <fa-icon [icon]="'user-circle'"></fa-icon>
-  </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark navbar-black">
   <button class="navbar-toggler"
@@ -10,16 +7,13 @@
           (click)="collapsed = !collapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div *ngIf="mobile" class="avatar">
-    <fa-icon [icon]="'user-circle'"></fa-icon>
-  </div>
-  <div class="collapse navbar-collapse" id="navbarNav" [ngClass]="{show: collapsed}">
+  <div class="collapse navbar-collapse" id="navbarNav" [ngClass]="{show: !collapsed}">
     <ul class="navbar-nav navbar-nav-left">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/about" routerLinkActive="active" (click)="collapsed = false">About Kevin</a>
+      <li class="nav-item" (click)="collapsed = true">
+        <a class="nav-link" routerLink="/about" routerLinkActive="active" >About Kevin</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link"  routerLink="/donate" routerLinkActive="active" (click)="collapsed = false">Donate Here</a>
+      <li class="nav-item" (click)="collapsed = true">
+        <a class="nav-link"  routerLink="/donate" routerLinkActive="active" (click)="collapsed = true">Donate Here</a>
       </li>
     </ul>
     <img *ngIf="!mobile" src="../../assets/img/KG_WiffleBall_Logo_FINAL-01.png"/>
@@ -33,14 +27,14 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/details" routerLinkActive="active"
-             (click)="collapsed = false">Event Details</a>
+             (click)="collapsed = true">Event Details</a>
           <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/rules" routerLinkActive="active"
-             (click)="collapsed = false">Rules</a>
+             (click)="collapsed = true">Rules</a>
           <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/register" routerLinkActive="active"
-             (click)="collapsed = false">Register</a>
+             (click)="collapsed = true">Register</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/2017" routerLinkActive="active"
-             (click)="collapsed = false">2017 Tournament</a>
+             (click)="collapsed = true">2017 Tournament</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -56,11 +50,5 @@
         </div>
       </li>
     </ul>
-    <div *ngIf="mobile" class="sign-in">
-      <hr/>
-      <a class="text-white">Sign in</a>
-      <span class="d-inline text-muted"> or </span>
-      <a class="text-white">Sign up</a>
-    </div>
   </div>
 </nav>

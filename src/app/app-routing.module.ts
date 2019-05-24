@@ -12,28 +12,28 @@ import {NgModule} from "@angular/core";
 import {TeamResolver} from "./team.resolver";
 import {RegisterResolver} from "./register.resolver";
 
-
 const routes: Routes = [
-    { path: '', redirectTo: '/about', pathMatch: 'full' },
-    { path: 'about', component: AboutComponent },
-    { path: 'fundraiser/wiffle-ball', redirectTo: 'fundraiser/wiffle-ball/details', pathMatch: 'full' },
-    { path: 'fundraiser/wiffle-ball/details', component: WiffleBallEventDetailsComponent},
-    { path: 'fundraiser/wiffle-ball/rules', component: WiffleBallRulesComponent},
-    {
-      path: 'fundraiser/wiffle-ball/register',
-      component: WiffleBallRegisterComponent,
-      resolve: [RegisterResolver]
-    },
-    {
-      path: 'fundraiser/wiffle-ball/team/:id',
-      component: WiffleBallTeamPayComponent,
-      resolve: [TeamResolver]
-    },
-    { path: 'fundraiser/wiffle-ball/2017', component: WiffleBallPastTournamentComponent},
-    { path: 'fundraiser/bingo-night', redirectTo: 'fundraiser/bingo-night/details', pathMatch: 'full' },
-    { path: 'fundraiser/bingo-night/details', component: BingoNightEventDetailsComponent},
-    { path: 'fundraiser/bingo-night/register', component: BingoNightRegisterComponent},
-    { path: 'donate', component: DonateComponent }
+  { path: '', redirectTo: '/about', pathMatch: 'full' },
+  { path: 'about', component: AboutComponent },
+  { path: 'fundraiser/wiffle-ball', redirectTo: 'fundraiser/wiffle-ball/details', pathMatch: 'full' },
+  { path: 'fundraiser/wiffle-ball/details', component: WiffleBallEventDetailsComponent},
+  { path: 'fundraiser/wiffle-ball/rules', component: WiffleBallRulesComponent},
+  {
+    path: 'fundraiser/wiffle-ball/register',
+    component: WiffleBallRegisterComponent,
+    resolve: [RegisterResolver]
+  },
+  {
+    path: 'fundraiser/wiffle-ball/team/:id',
+    component: WiffleBallTeamPayComponent,
+    resolve: [TeamResolver]
+  },
+  { path: 'fundraiser/wiffle-ball/2017', component: WiffleBallPastTournamentComponent},
+  { path: 'fundraiser/bingo-night', redirectTo: 'fundraiser/bingo-night/details', pathMatch: 'full' },
+  { path: 'fundraiser/bingo-night/details', component: BingoNightEventDetailsComponent},
+  { path: 'fundraiser/bingo-night/register', component: BingoNightRegisterComponent},
+  { path: 'donate', component: DonateComponent },
+  { path: '**', redirectTo: '/about'},
 ];
 
 @NgModule({

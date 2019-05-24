@@ -1,4 +1,19 @@
-<div class="donate">
+<div *ngIf="donated" class="thank-you">
+  <h3>Thank You!</h3>
+  <div class="header-divider">
+    <fa-icon [icon]="'certificate'"></fa-icon>
+    <fa-icon [icon]="'certificate'"></fa-icon>
+    <fa-icon [icon]="'certificate'"></fa-icon>
+  </div>
+
+  <p>
+    Thank you for supporting our cause! Your donation will be used in support of the scholarship fund
+    to help aspiring students achieve their dreams.
+  </p>
+</div>
+
+
+<div *ngIf="!donated" class="donate">
   <h3>Donate</h3>
   <div class="header-divider">
     <fa-icon [icon]="'certificate'"></fa-icon>
@@ -20,7 +35,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text">$</span>
             </div>
-            <input [(ngModel)]="donationAmount" type="number" class="form-control" id="paypalAmount" aria-label="Amount (to the nearest dollar)" placeholder="e.g. $25">
+            <input [(ngModel)]="donationAmount" name="donation" type="number" class="form-control" id="paypalAmount" aria-label="Amount (to the nearest dollar)" placeholder="e.g. $25">
           </div>
           <small id="paypalHelp" class="form-text text-muted">Enter in the amount you wish to donate!</small>
         </form>

@@ -3,8 +3,8 @@ import {League, Team} from "./team.model";
 import {Member} from "./member.model";
 import {messages} from "mailgun-js";
 
-const apiKey =  'key-60552ad39ebec85ead01d9065b740950';
-const domain = 'mg.ktgscholarshipfund.com';
+const apiKey =  functions.config().mailgun.api_key;
+const domain = functions.config().mailgun.domain;
 const mailgun = require('mailgun-js')({apiKey: apiKey, domain: domain});
 
 export const createTeam = functions.firestore
@@ -20,7 +20,7 @@ export const createTeam = functions.firestore
     const captainEmail = teamCaptain.email;
 
     const data = {
-      from: 'Claire <claire@ktgscholarshipfund.com>',
+      from: 'Kevin Gilbert Scholarship Fund <no-reply@ktgscholarshipfund.com>',
       to: [captainEmail],
       cc: ['ktgwiff@gmail.com'],
       subject: `Congrats ${newTeam.name}! You're registered!`,
@@ -61,7 +61,7 @@ export const markTeamAsPaid = functions.firestore
       const todaysDate =  `${dt.getMonth() + 1}/${dt.getDate()}/${dt.getFullYear()}`;
 
       const data = {
-        from: 'Claire <claire@ktgscholarshipfund.com>',
+        from: 'Kevin Gilbert Scholarship Fund <no-reply@ktgscholarshipfund.com>',
         to: [captainEmail],
         cc: ['ktgwiff@gmail.com'],
         subject: `Thanks for paying! You're all set.`,
