@@ -12,7 +12,7 @@ export class TeamService {
   constructor(private firestore: AngularFirestore) { }
 
   getTeams() {
-    return this.firestore.collection('teams').snapshotChanges();
+    return this.firestore.collection('teams').get();
   }
 
   getTeam(teamId: string) {

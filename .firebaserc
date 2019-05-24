@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "ktg-fund-dev",
+    "dev": "ktg-fund-dev",
+    "prod": "ktg-fund-prod"
+  }
+}

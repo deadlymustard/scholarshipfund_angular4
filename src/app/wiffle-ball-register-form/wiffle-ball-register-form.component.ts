@@ -72,7 +72,6 @@ export class WiffleBallRegisterFormComponent implements OnInit, OnChanges {
 
   submitTeam() {
     this.register.submitTeam(this.selectedColor, this.type.toLowerCase()).subscribe(data => {
-      console.log(data);
       if (data === true) {
         this.registerTeam();
       } else {
@@ -111,10 +110,8 @@ export class WiffleBallRegisterFormComponent implements OnInit, OnChanges {
       };
 
 
-      console.log(teamOutput);
       this.register.registerTeam(teamOutput).subscribe( data => {
         const hash = data.hash;
-        console.log(hash);
         this.router.navigateByUrl('/fundraiser/wiffle-ball/register/team/' + hash);
       });
 
@@ -123,12 +120,6 @@ export class WiffleBallRegisterFormComponent implements OnInit, OnChanges {
       this.valid = true;
     }
 
-
-
-
-
-
-    console.log('Good COlor!');
     return null;
   }
 
@@ -140,14 +131,12 @@ export class WiffleBallRegisterFormComponent implements OnInit, OnChanges {
       const transactionFee = ((100 + this.memberTotal) * .029 + .3);
       this.finalTotal = (100 + this.memberTotal).toFixed(2);
       this.paypalTotal = (100 + this.memberTotal + transactionFee).toFixed(2);
-      console.log(this.paypalTotal);
     } else {
       this.memberCount = this.members.length - 5;
       this.memberTotal = this.memberCount * 25;
       const transactionFee = ((100 + this.memberTotal) * .029 + .3);
       this.finalTotal = (100 + this.memberTotal).toFixed(2);
       this.paypalTotal = (100 + this.memberTotal + transactionFee).toFixed(2);
-      console.log(this.paypalTotal);
     }
 
 

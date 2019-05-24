@@ -37,6 +37,8 @@
     "concurrently": "^3.5.0",
     "core-js": "^2.4.1",
     "firebase": "^6.0.2",
+    "firebase-admin": "^7.3.0",
+    "firebase-functions": "^2.3.1",
     "font-awesome": "^4.7.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
