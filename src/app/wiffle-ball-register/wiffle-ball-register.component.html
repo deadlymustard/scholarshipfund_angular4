@@ -7,7 +7,18 @@
   </div>
   <form [formGroup]="teamFormGroup">
     <div class="form-group">
-      <label for="teamNameInput">Team name</label>
+      <label for="teamLeagueInput">League</label>
+      <select formControlName="league" class="form-control" id="teamLeagueInput">
+        <option>Competitive</option>
+        <option>Friendly</option>
+      </select>
+      <small id="teamLeagueHelp" class="form-text text-muted">
+        Please remember to review the Rules and Regulations <a routerLink="/fundraiser/wiffle-ball/rules">here</a>.
+        Note: Competitive has a minimum of 4 team members and Friendly has a minimum of 5 team members.
+      </small>
+    </div>
+    <div class="form-group">
+      <label for="teamNameInput">Team Name</label>
       <input formControlName="name" type="text" class="form-control" id="teamNameInput" aria-describedby="emailHelp" placeholder="e.g. Thundercats">
       <small *ngIf="teamFormGroup.dirty && teamFormGroup.get('name').errors && teamFormGroup.get('name').errors['required']"
              class="form-text text-danger">
@@ -19,23 +30,12 @@
       </small>
     </div>
     <div class="form-group">
-      <label for="teamColorInput">Team shirt color</label>
+      <label for="teamColorInput">Team Shirt Color</label>
       <select formControlName="shirtColor" class="form-control" id="teamColorInput">
         <option *ngFor="let color of colors">{{color}}</option>
       </select>
-      <small id="teamColorHelp" class="form-text text-muted">Color of your team's shirts.</small>
     </div>
-    <div class="form-group">
-      <label for="teamLeagueInput">League</label>
-      <select formControlName="league" class="form-control" id="teamLeagueInput">
-        <option>Competitive</option>
-        <option>Friendly</option>
-      </select>
-      <small id="teamLeagueHelp" class="form-text text-muted">
-        Your team's league. Competitive has a minimum of four members. Friendly has a minimum of five members.
-      </small>
-    </div>
-    <label>Team captain</label>
+    <label>Team Captain</label>
     <ul formGroupName="captain" class="list-group">
       <li class="list-group-item">
         <span class="badge badge-primary badge-pill float-right">1</span>
@@ -46,11 +46,11 @@
             <input formControlName="name" type="text" class="form-control" id="inputCaptainName" placeholder="e.g. Jane, Jone Doe">
           </div>
           <div class="form-group col-md-4">
-            <label for="inputCaptainEmail">Email address</label>
+            <label for="inputCaptainEmail">Email Address</label>
             <input formControlName="email" type="email" class="form-control" id="inputCaptainEmail" aria-describedby="emailHelp" placeholder="Enter email">
           </div>
           <div class="form-group col-md-3">
-            <label for="inputCaptainPhone">Phone number</label>
+            <label for="inputCaptainPhone">Phone Number</label>
             <input formControlName="phone" type="text" class="form-control" id="inputCaptainPhone" mask='(000) 000-0000'  aria-describedby="emailHelp" placeholder="e.g. (555)-555-5555">
           </div>
           <div class="form-group col-md-2">
@@ -75,7 +75,7 @@
         </small>
       </li>
     </ul>
-    <label>Team members</label>
+    <label>Team Members</label>
     <ul formArrayName="members" class="list-group">
       <li *ngFor="let member of membersFormArray.controls; let i = index" formGroupName="{{i}}" class="list-group-item">
         <span class="badge badge-primary badge-pill float-right">{{i + 2}}</span>

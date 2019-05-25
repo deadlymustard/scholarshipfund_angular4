@@ -65,7 +65,7 @@ export class WiffleBallRegisterComponent implements OnInit {
     this.teamFormGroup = this.fb.group({
       name: ['', Validators.required, this.teamValidator.validateTeamName()],
       shirtColor: [this.colors[0]],
-      league: [League.COMPETITIVE],
+      league: [League.COMPETITIVE, {updateOn: 'change'}],
       captain: this.fb.group({
         name: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
