@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarNav" [ngClass]="{show: !collapsed}">
     <ul class="navbar-nav navbar-nav-left">
       <li class="nav-item" (click)="collapsed = true">
-        <a class="nav-link" routerLink="/about" routerLinkActive="active" >About Kevin</a>
+        <a class="nav-link" routerLink="/about" routerLinkActive="active" >About</a>
       </li>
       <li class="nav-item" (click)="collapsed = true">
         <a class="nav-link"  routerLink="/donate" routerLinkActive="active" (click)="collapsed = true">Donate Here</a>
@@ -35,19 +35,15 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/2017" routerLinkActive="active"
              (click)="collapsed = true">2017 Tournament</a>
+          <a class="dropdown-item" routerLink="fundraiser/wiffle-ball/2018" routerLinkActive="active"
+             (click)="collapsed = true">2018 Tournament</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle" id="navbarBingoNightDropdown"
-          (click)="routeToBingoNight()" [ngClass]="{ active: bingoNightLinkActive === true }"
-          role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link"  routerLink="fundraiser/bingo-night/details"
+           routerLinkActive="active" (click)="collapsed = true">
           Bingo Night
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="fundraiser/bingo-night/details" routerLinkActive="active">Event Details</a>
-          <a class="dropdown-item" routerLink="fundraiser/bingo-night/register" routerLinkActive="active">Register</a>
-        </div>
       </li>
     </ul>
   </div>

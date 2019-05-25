@@ -18,9 +18,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {WiffleBallEventDetailsComponent} from './wiffle-ball-event-details/wiffle-ball-event-details.component';
 import {WiffleBallRulesComponent} from './wiffle-ball-rules/wiffle-ball-rules.component';
 import {WiffleBallRegisterComponent} from './wiffle-ball-register/wiffle-ball-register.component';
-import {WiffleBallPastTournamentComponent} from './wiffle-ball-past-tournament/wiffle-ball-past-tournament.component';
 import {BingoNightEventDetailsComponent} from './bingo-night-event-details/bingo-night-event-details.component';
-import {BingoNightRegisterComponent} from './bingo-night-register/bingo-night-register.component';
 import {WiffleBallEventDetailsSubscribeDialogComponent} from './wiffle-ball-event-details-subscribe-dialog/wiffle-ball-event-details-subscribe-dialog.component';
 import {WiffleBallRegisterFormComponent} from './wiffle-ball-register-form/wiffle-ball-register-form.component';
 import {RegisterService} from './register.service';
@@ -40,6 +38,8 @@ import {NgxMaskModule} from "ngx-mask";
 import {AngularFireStorage, AngularFireStorageModule} from "@angular/fire/storage";
 import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore";
 import {NgxPayPalModule} from "ngx-paypal";
+import {WiffleBall2017TournamentComponent} from "./wiffle-ball-2017-tournament/wiffle-ball-2017-tournament.component";
+import {WiffleBall2018TournamentComponent} from "./wiffle-ball-2018-tournament/wiffle-ball-2018-tournament.component";
 
 
 @NgModule({
@@ -53,9 +53,9 @@ import {NgxPayPalModule} from "ngx-paypal";
     WiffleBallEventDetailsComponent,
     WiffleBallRulesComponent,
     WiffleBallRegisterComponent,
-    WiffleBallPastTournamentComponent,
+    WiffleBall2017TournamentComponent,
+    WiffleBall2018TournamentComponent,
     BingoNightEventDetailsComponent,
-    BingoNightRegisterComponent,
     WiffleBallEventDetailsSubscribeDialogComponent,
     WiffleBallRegisterFormComponent,
     WiffleBallTeamPayComponent

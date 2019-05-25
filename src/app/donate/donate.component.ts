@@ -22,7 +22,7 @@ import {environment} from "../../environments/environment";
 export class DonateComponent implements OnInit, OnChanges {
 
   public donationAmount: string;
-  public payPalConfig?: IPayPalConfig;
+  public payPalConfig?: any;
 
   public donationSubject: Subject<boolean> = new Subject<boolean>();
 

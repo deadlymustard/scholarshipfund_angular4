@@ -4,7 +4,7 @@
 // The list of which env maps to which file can be found in `angular-cli.json`.
 export const environment = {
   production: true,
-  paypalApiKey: 'AfpdbUhd5xPbu2JXznsV5D1vDccd28C77oeC4tgVPsapxkSxIYBSn3lmHcWXcMoqHvfWyPluAQZSTuH4ng',
+  paypalApiKey: 'AfpdbUhd5xPbu2JXznsV5D1vDccd28C77oeC4tgVPsapxkSxIYBSn3lmHcWXcMoqHvfWyPluAQZSTuH4',
   firebase: {
     apiKey: 'AIzaSyDywOnE_-f8wklEKzRD5xw9FBq83RRoFMM',
     projectId: 'ktg-fund-prod'
