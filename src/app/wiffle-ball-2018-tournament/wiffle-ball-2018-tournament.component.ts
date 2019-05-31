@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery';
+import {Observable} from "rxjs/internal/Observable";
+import {AngularFireStorage} from "@angular/fire/storage";
+import {forkJoin} from "rxjs/internal/observable/forkJoin";
 
 @Component({
   selector: 'app-wiffle-ball-2018-tournament',
@@ -11,10 +14,49 @@ export class WiffleBall2018TournamentComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor() { }
+  images: string[];
+  imagesLoaded = false;
+
+  constructor(private storage: AngularFireStorage) { }
 
 
   ngOnInit() {
+
+    const inlineImageRefs: Observable<any>[] = [
+      this.storage.ref('/images/pictures/2018/champions.jpg').getDownloadURL(),
+    ];
+
+    forkJoin(inlineImageRefs).subscribe(res => {
+      this.images = res;
+      this.imagesLoaded = true;
+    });
+
+
+    const galleryImageRefs: Observable<any>[] = [
+      this.storage.ref('/images/pictures/2018/1.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/2.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/3.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/4.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/5.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/6.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/7.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/8.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/9.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/10.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/11.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/12.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/13.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/14.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/16.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/17.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/18.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/19.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2018/20.jpg').getDownloadURL()
+    ];
+
+    forkJoin(galleryImageRefs).subscribe(res => {
+      this.galleryImages = res.map(image => {return {small: image, medium: image, big: image, url: image} as NgxGalleryImage});
+    });
 
     this.galleryOptions = [
       {
@@ -47,109 +89,6 @@ export class WiffleBall2018TournamentComponent implements OnInit {
         thumbnailsMargin: 10,
         thumbnailMargin: 10,
         preview: false
-      }
-    ];
-
-    this.galleryImages = [
-      {
-        small:'assets/img/pics/2018/01.JPG',
-        medium:'assets/img/pics/2018/01.JPG',
-        big:'assets/img/pics/2018/01.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/010.JPG',
-        medium:'assets/img/pics/2018/010.JPG',
-        big:'assets/img/pics/2018/010.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/011.JPG',
-        medium:'assets/img/pics/2018/011.JPG',
-        big:'assets/img/pics/2018/011.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/012.JPG',
-        medium:'assets/img/pics/2018/012.JPG',
-        big:'assets/img/pics/2018/012.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/013.JPG',
-        medium:'assets/img/pics/2018/013.JPG',
-        big:'assets/img/pics/2018/013.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/014.JPG',
-        medium:'assets/img/pics/2018/014.JPG',
-        big:'assets/img/pics/2018/014.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/015.JPG',
-        medium:'assets/img/pics/2018/015.JPG',
-        big:'assets/img/pics/2018/015.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/016.JPG',
-        medium:'assets/img/pics/2018/016.JPG',
-        big:'assets/img/pics/2018/016.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/017.JPG',
-        medium:'assets/img/pics/2018/017.JPG',
-        big:'assets/img/pics/2018/017.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/018.JPG',
-        medium:'assets/img/pics/2018/018.JPG',
-        big:'assets/img/pics/2018/018.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/019.JPG',
-        medium:'assets/img/pics/2018/019.JPG',
-        big:'assets/img/pics/2018/019.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/02.JPG',
-        medium:'assets/img/pics/2018/02.JPG',
-        big:'assets/img/pics/2018/02.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/020.JPG',
-        medium:'assets/img/pics/2018/020.JPG',
-        big:'assets/img/pics/2018/020.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/03.JPG',
-        medium:'assets/img/pics/2018/03.JPG',
-        big:'assets/img/pics/2018/03.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/04.JPG',
-        medium:'assets/img/pics/2018/04.JPG',
-        big:'assets/img/pics/2018/04.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/05.JPG',
-        medium:'assets/img/pics/2018/05.JPG',
-        big:'assets/img/pics/2018/05.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/06.JPG',
-        medium:'assets/img/pics/2018/06.JPG',
-        big:'assets/img/pics/2018/06.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/07.JPG',
-        medium:'assets/img/pics/2018/07.JPG',
-        big:'assets/img/pics/2018/07.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/08.JPG',
-        medium:'assets/img/pics/2018/08.JPG',
-        big:'assets/img/pics/2018/08.JPG'
-      },
-      {
-        small:'assets/img/pics/2018/09.JPG',
-        medium:'assets/img/pics/2018/09.JPG',
-        big:'assets/img/pics/2018/09.JPG'
       }
     ];
 

@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-gallery';
+import {AngularFireStorage} from "@angular/fire/storage";
+import {Observable} from "rxjs/internal/Observable";
+import {forkJoin} from "rxjs/internal/observable/forkJoin";
 
 @Component({
   selector: 'app-wiffle-ball-2017-tournament',
@@ -8,13 +11,61 @@ import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-galle
 })
 export class WiffleBall2017TournamentComponent implements OnInit {
 
-  galleryOptions: NgxGalleryOptions[];
-  galleryImages: NgxGalleryImage[];
+  galleryOptions: NgxGalleryOptions[] = [];
+  galleryImages: NgxGalleryImage[] = [];
 
-  constructor() { }
+  images: string[] = [];
+  imagesLoaded = false;
+
+  constructor(
+    private storage: AngularFireStorage
+  ) { }
 
 
   ngOnInit() {
+
+    const inlineImageRefs: Observable<any>[] = [
+      this.storage.ref('/images/pictures/2017/GROUP_SHOT.JPG').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/Godzilla_Farmers_and_Big_Boppers.JPG').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/Mastodons-_champs.jpg').getDownloadURL()
+    ];
+
+    forkJoin(inlineImageRefs).subscribe(res => {
+      this.images = res;
+      this.imagesLoaded = true;
+    });
+
+
+    const galleryImageRefs: Observable<any>[] = [
+      this.storage.ref('/images/pictures/2017/1.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/2.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/3.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/4.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/5.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/6.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/7.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/8.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/9.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/10.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/11.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/12.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/13.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/14.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/16.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/17.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/18.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/19.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/20.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/21.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/22.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/23.jpg').getDownloadURL(),
+      this.storage.ref('/images/pictures/2017/24.jpg').getDownloadURL()
+    ];
+
+    forkJoin(galleryImageRefs).subscribe(res => {
+      this.galleryImages = res.map(image => {return {small: image, medium: image, big: image, url: image} as NgxGalleryImage});
+    });
+
 
     this.galleryOptions = [
       {
@@ -50,123 +101,6 @@ export class WiffleBall2017TournamentComponent implements OnInit {
       }
     ];
 
-    this.galleryImages = [
-      {
-        small: 'assets/img/pics/2017/1.jpg',
-        medium: 'assets/img/pics/2017/1.jpg',
-        big: 'assets/img/pics/2017/1.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/2.jpg',
-        medium: 'assets/img/pics/2017/2.jpg',
-        big: 'assets/img/pics/2017/2.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/3.jpg',
-        medium: 'assets/img/pics/2017/3.jpg',
-        big: 'assets/img/pics/2017/3.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/4.jpg',
-        medium: 'assets/img/pics/2017/4.jpg',
-        big: 'assets/img/pics/2017/4.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/5.jpg',
-        medium: 'assets/img/pics/2017/5.jpg',
-        big: 'assets/img/pics/2017/5.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/6.jpg',
-        medium: 'assets/img/pics/2017/6.jpg',
-        big: 'assets/img/pics/2017/6.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/7.jpg',
-        medium: 'assets/img/pics/2017/7.jpg',
-        big: 'assets/img/pics/2017/7.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/8.jpg',
-        medium: 'assets/img/pics/2017/8.jpg',
-        big: 'assets/img/pics/2017/8.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/9.jpg',
-        medium: 'assets/img/pics/2017/9.jpg',
-        big: 'assets/img/pics/2017/9.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/10.jpg',
-        medium: 'assets/img/pics/2017/10.jpg',
-        big: 'assets/img/pics/2017/10.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/11.jpg',
-        medium: 'assets/img/pics/2017/11.jpg',
-        big: 'assets/img/pics/2017/11.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/12.jpg',
-        medium: 'assets/img/pics/2017/12.jpg',
-        big: 'assets/img/pics/2017/12.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/13.jpg',
-        medium: 'assets/img/pics/2017/13.jpg',
-        big: 'assets/img/pics/2017/13.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/14.jpg',
-        medium: 'assets/img/pics/2017/14.jpg',
-        big: 'assets/img/pics/2017/14.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/16.jpg',
-        medium: 'assets/img/pics/2017/16.jpg',
-        big: 'assets/img/pics/2017/16.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/17.jpg',
-        medium: 'assets/img/pics/2017/17.jpg',
-        big: 'assets/img/pics/2017/17.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/18.jpg',
-        medium: 'assets/img/pics/2017/18.jpg',
-        big: 'assets/img/pics/2017/18.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/19.jpg',
-        medium: 'assets/img/pics/2017/19.jpg',
-        big: 'assets/img/pics/2017/19.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/20.jpg',
-        medium: 'assets/img/pics/2017/20.jpg',
-        big: 'assets/img/pics/2017/20.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/21.jpg',
-        medium: 'assets/img/pics/2017/21.jpg',
-        big: 'assets/img/pics/2017/21.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/22.jpg',
-        medium: 'assets/img/pics/2017/22.jpg',
-        big: 'assets/img/pics/2017/22.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/23.jpg',
-        medium: 'assets/img/pics/2017/23.jpg',
-        big: 'assets/img/pics/2017/23.jpg'
-      },
-      {
-        small: 'assets/img/pics/2017/24.jpg',
-        medium: 'assets/img/pics/2017/24.jpg',
-        big: 'assets/img/pics/2017/24.jpg'
-      },
-    ];
 
   }
 

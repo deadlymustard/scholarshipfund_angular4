@@ -11,6 +11,7 @@ import {TeamResolver} from "./team.resolver";
 import {RegisterResolver} from "./register.resolver";
 import {WiffleBall2017TournamentComponent} from "./wiffle-ball-2017-tournament/wiffle-ball-2017-tournament.component";
 import {WiffleBall2018TournamentComponent} from "./wiffle-ball-2018-tournament/wiffle-ball-2018-tournament.component";
+import {environment} from "../environments/environment";
 
 const routes: Routes = [
   { path: '', redirectTo: '/about', pathMatch: 'full' },

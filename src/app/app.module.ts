@@ -40,6 +40,7 @@ import {AngularFirestore, AngularFirestoreModule} from "@angular/fire/firestore"
 import {NgxPayPalModule} from "ngx-paypal";
 import {WiffleBall2017TournamentComponent} from "./wiffle-ball-2017-tournament/wiffle-ball-2017-tournament.component";
 import {WiffleBall2018TournamentComponent} from "./wiffle-ball-2018-tournament/wiffle-ball-2018-tournament.component";
+import {AngularFireAuthModule} from "@angular/fire/auth";
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import {WiffleBall2018TournamentComponent} from "./wiffle-ball-2018-tournament/w
     WiffleBallTeamPayComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     CommonModule,
     HttpClientModule,
@@ -80,7 +81,9 @@ import {WiffleBall2018TournamentComponent} from "./wiffle-ball-2018-tournament/w
     NgxPayPalModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule
   ],
   entryComponents: [ WiffleBallEventDetailsSubscribeDialogComponent ],
   providers: [
