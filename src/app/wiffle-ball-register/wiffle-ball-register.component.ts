@@ -7,6 +7,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {TeamService} from "../team.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {TeamValidator} from "../validators/team.validator";
+import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-wiffle-ball-register',
@@ -27,6 +28,11 @@ export class WiffleBallRegisterComponent implements OnInit {
 
   teamFormGroup: FormGroup;
 
+  data = {
+    description: `Registration for the 2019 Kevin Gilbert Wiffle Ball Tournament is now open. 
+    Registration is $100 per team. Registration includes a free t-shirt and a two-game guarantee.`,
+  };
+
 
   constructor(
     public dialog: MatDialog,
@@ -34,7 +40,9 @@ export class WiffleBallRegisterComponent implements OnInit {
     private route: ActivatedRoute,
     private teamService: TeamService,
     private teamValidator: TeamValidator,
-    public fb: FormBuilder
+    public fb: FormBuilder,
+    private title: Title,
+    private meta: Meta
   ) {
 
     this.team = new Team();
@@ -62,6 +70,13 @@ export class WiffleBallRegisterComponent implements OnInit {
 
 
   ngOnInit() {
+    this.title.setTitle('Kevin T. Gilbert Scholarship Fund | Wiffle Ball Register');
+    this.meta.addTags([
+      { name: 'og:url', content: '/wiffle-ball/register' },
+      { name: 'og:title', content: 'Kevin T. Gilbert Scholarship Fund | Wiffle Ball Register' },
+      { name: 'og:description', content: this.data.description }
+    ]);
+
     this.teamFormGroup = this.fb.group({
       name: ['', Validators.required, this.teamValidator.validateTeamName()],
       shirtColor: [this.colors[0]],

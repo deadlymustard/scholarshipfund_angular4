@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
+import {isPlatformBrowser} from "@angular/common";
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,13 @@ import {NavigationEnd, Router} from "@angular/router";
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private router: Router) {
+  isBrowser;
 
+  constructor(
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
@@ -18,7 +24,9 @@ export class AppComponent implements OnInit {
       if (!(evt instanceof NavigationEnd)) {
         return;
       }
-      window.scrollTo(0, 0)
+      if (this.isBrowser) {
+        window.scrollTo(0, 0)
+      }
     });
   }
 }

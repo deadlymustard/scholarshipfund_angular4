@@ -6,6 +6,9 @@ import {messages} from "mailgun-js";
 const apiKey =  functions.config().mailgun.api_key;
 const domain = functions.config().mailgun.domain;
 const mailgun = require('mailgun-js')({apiKey: apiKey, domain: domain});
+const universal = require(`${process.cwd()}/dist/server`).app;
+
+export const ssr = functions.https.onRequest(universal);
 
 export const createTeam = functions.firestore
 .document('teams/{teamId}')

@@ -11,29 +11,38 @@ import {TeamResolver} from "./team.resolver";
 import {RegisterResolver} from "./register.resolver";
 import {WiffleBall2017TournamentComponent} from "./wiffle-ball-2017-tournament/wiffle-ball-2017-tournament.component";
 import {WiffleBall2018TournamentComponent} from "./wiffle-ball-2018-tournament/wiffle-ball-2018-tournament.component";
+import {ContentGuard} from "./content.guard";
+import {UserLoginComponent} from "./user-login/user-login.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/about', pathMatch: 'full' },
-  { path: 'about', component: AboutComponent },
-  { path: 'fundraiser/wiffle-ball', redirectTo: 'fundraiser/wiffle-ball/details', pathMatch: 'full' },
-  { path: 'fundraiser/wiffle-ball/details', component: WiffleBallEventDetailsComponent},
-  { path: 'fundraiser/wiffle-ball/rules', component: WiffleBallRulesComponent},
+  { path: 'login', component: UserLoginComponent},
   {
-    path: 'fundraiser/wiffle-ball/register',
-    component: WiffleBallRegisterComponent,
-    resolve: [RegisterResolver]
-  },
-  {
-    path: 'fundraiser/wiffle-ball/team/:id',
-    component: WiffleBallTeamPayComponent,
-    resolve: [TeamResolver]
-  },
-  { path: 'fundraiser/wiffle-ball/2017', component: WiffleBall2017TournamentComponent},
-  { path: 'fundraiser/wiffle-ball/2018', component: WiffleBall2018TournamentComponent},
-  { path: 'fundraiser/bingo-night', redirectTo: 'fundraiser/bingo-night/details', pathMatch: 'full' },
-  { path: 'fundraiser/bingo-night/details', component: BingoNightEventDetailsComponent},
-  { path: 'donate', component: DonateComponent },
-  { path: '**', redirectTo: '/about'},
+    path: '',
+    canActivate: [ContentGuard],
+    children: [
+      { path: '', redirectTo: '/about', pathMatch: 'full' },
+      { path: 'about', component: AboutComponent },
+      { path: 'fundraiser/wiffle-ball', redirectTo: 'fundraiser/wiffle-ball/details', pathMatch: 'full' },
+      { path: 'fundraiser/wiffle-ball/details', component: WiffleBallEventDetailsComponent},
+      { path: 'fundraiser/wiffle-ball/rules', component: WiffleBallRulesComponent},
+      {
+        path: 'fundraiser/wiffle-ball/register',
+        component: WiffleBallRegisterComponent,
+        resolve: [RegisterResolver]
+      },
+      {
+        path: 'fundraiser/wiffle-ball/team/:id',
+        component: WiffleBallTeamPayComponent,
+        resolve: [TeamResolver]
+      },
+      { path: 'fundraiser/wiffle-ball/2017', component: WiffleBall2017TournamentComponent},
+      { path: 'fundraiser/wiffle-ball/2018', component: WiffleBall2018TournamentComponent},
+      { path: 'fundraiser/bingo-night', redirectTo: 'fundraiser/bingo-night/details', pathMatch: 'full' },
+      { path: 'fundraiser/bingo-night/details', component: BingoNightEventDetailsComponent},
+      { path: 'donate', component: DonateComponent },
+      { path: '**', redirectTo: '/about'},
+    ]
+  }
 ];
 
 @NgModule({

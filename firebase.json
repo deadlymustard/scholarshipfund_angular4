@@ -6,11 +6,11 @@
     ]
   },
   "hosting": {
-    "public": "dist",
+    "public": "dist/browser",
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "function": "ssr"
       }
     ]
   }

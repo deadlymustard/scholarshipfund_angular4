@@ -7,6 +7,7 @@ export const environment = {
   paypalApiKey: 'AfpdbUhd5xPbu2JXznsV5D1vDccd28C77oeC4tgVPsapxkSxIYBSn3lmHcWXcMoqHvfWyPluAQZSTuH4',
   firebase: {
     apiKey: 'AIzaSyDywOnE_-f8wklEKzRD5xw9FBq83RRoFMM',
-    projectId: 'ktg-fund-prod'
+    projectId: 'ktg-fund-prod',
+    storageBucket: 'gs://ktg-fund-prod.appspot.com'
   }
 };
