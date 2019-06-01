@@ -3,6 +3,7 @@ import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from 'ngx-galle
 import {AngularFireStorage} from "@angular/fire/storage";
 import {Observable} from "rxjs/internal/Observable";
 import {forkJoin} from "rxjs/internal/observable/forkJoin";
+import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-wiffle-ball-2017-tournament',
@@ -17,12 +18,27 @@ export class WiffleBall2017TournamentComponent implements OnInit {
   images: string[] = [];
   imagesLoaded = false;
 
+  data = {
+    description: `1st Annual Wiffle Ball Tournament (2017). Twelve teams and numerous volunteers 
+      and spectators came together on Sunday, August 27th at Pickell Park in Whitehouse Station
+      in loving memory of Kev. A big thank you to all who came out to play/volunteer/watch!`,
+  };
+
   constructor(
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private title: Title,
+    private meta: Meta
   ) { }
 
 
   ngOnInit() {
+    this.title.setTitle('Kevin T. Gilbert Scholarship Fund | 2017 Tournament');
+    this.meta.addTags([
+      { name: 'og:url', content: '/wiffle-ball/2017' },
+      { name: 'og:title', content: 'Kevin T. Gilbert Scholarship Fund | 2017 Tournament' },
+      { name: 'og:description', content: this.data.description }
+    ]);
+
 
     const inlineImageRefs: Observable<any>[] = [
       this.storage.ref('/images/pictures/2017/GROUP_SHOT.JPG').getDownloadURL(),

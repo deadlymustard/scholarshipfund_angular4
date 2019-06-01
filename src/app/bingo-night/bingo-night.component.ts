@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'bingo-night-nav',
@@ -10,6 +11,7 @@ export class BingoNightComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

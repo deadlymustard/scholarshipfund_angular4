@@ -41,6 +41,7 @@ import {NgxPayPalModule} from "ngx-paypal";
 import {WiffleBall2017TournamentComponent} from "./wiffle-ball-2017-tournament/wiffle-ball-2017-tournament.component";
 import {WiffleBall2018TournamentComponent} from "./wiffle-ball-2018-tournament/wiffle-ball-2018-tournament.component";
 import {AngularFireAuthModule} from "@angular/fire/auth";
+import {UserLoginComponent} from "./user-login/user-login.component";
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import {AngularFireAuthModule} from "@angular/fire/auth";
     BingoNightEventDetailsComponent,
     WiffleBallEventDetailsSubscribeDialogComponent,
     WiffleBallRegisterFormComponent,
-    WiffleBallTeamPayComponent
+    WiffleBallTeamPayComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
