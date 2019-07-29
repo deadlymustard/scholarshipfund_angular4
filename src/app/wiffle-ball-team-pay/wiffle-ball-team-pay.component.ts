@@ -100,7 +100,7 @@ export class WiffleBallTeamPayComponent implements OnInit {
   calculateTotals(): void {
     const baseMembers = (this.resolvedTeam.league === League.COMPETITIVE) ? 4 : 5;
     this.additionalMembers = this.resolvedTeam.members.length % baseMembers;
-    this.baseFee = 100 + ((this.resolvedTeam.members.length % baseMembers) * 25);
+    this.baseFee = 125 + ((this.resolvedTeam.members.length % baseMembers) * 25);
     this.transactionFee = ((this.baseFee) + this.baseFee * (.029) + .30)  * (.029) + .30;
     this.finalFee = (this.baseFee + this.transactionFee).toFixed(2);
   }
