@@ -36,6 +36,7 @@ export const createTeam = functions.firestore
     };
     mailgun.messages().send(data, (error: any, body: messages.SendResponse) => {
       console.log(body);
+      return;
     });
   }
 
@@ -56,7 +57,7 @@ export const markTeamAsPaid = functions.firestore
       const captainEmail = teamCaptain.email;
 
       const baseMembers = (updatedTeam.league === League.COMPETITIVE) ? 4 : 5;
-      const baseFee = 100 + ((updatedTeam.members.length % baseMembers) * 25);
+      const baseFee = 125 + ((updatedTeam.members.length % baseMembers) * 25);
       const transactionFee = ((baseFee) + baseFee * (.029) + .30)  * (.029) + .30;
       const totalPrice = (baseFee + transactionFee).toFixed(2);
 
