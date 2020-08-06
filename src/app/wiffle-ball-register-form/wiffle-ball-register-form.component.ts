@@ -128,15 +128,15 @@ export class WiffleBallRegisterFormComponent implements OnInit, OnChanges {
     if (this.type.toLowerCase() === 'competitive') {
       this.memberCount = this.members.length - 4;
       this.memberTotal = this.memberCount * 25;
-      const transactionFee = ((100 + this.memberTotal) * .029 + .3);
-      this.finalTotal = (100 + this.memberTotal).toFixed(2);
-      this.paypalTotal = (100 + this.memberTotal + transactionFee).toFixed(2);
+      const transactionFee = ((125 + this.memberTotal) * .029 + .3);
+      this.finalTotal = (125 + this.memberTotal).toFixed(2);
+      this.paypalTotal = (125 + this.memberTotal + transactionFee).toFixed(2);
     } else {
       this.memberCount = this.members.length - 5;
       this.memberTotal = this.memberCount * 25;
-      const transactionFee = ((100 + this.memberTotal) * .029 + .3);
-      this.finalTotal = (100 + this.memberTotal).toFixed(2);
-      this.paypalTotal = (100 + this.memberTotal + transactionFee).toFixed(2);
+      const transactionFee = ((125 + this.memberTotal) * .029 + .3);
+      this.finalTotal = (125 + this.memberTotal).toFixed(2);
+      this.paypalTotal = (125 + this.memberTotal + transactionFee).toFixed(2);
     }
 
 
