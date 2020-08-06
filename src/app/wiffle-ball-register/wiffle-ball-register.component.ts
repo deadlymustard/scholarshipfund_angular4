@@ -122,7 +122,7 @@ export class WiffleBallRegisterComponent implements OnInit {
     team.paid = false;
 
     const baseMembers = (teamValues.league === League.COMPETITIVE) ? 4 : 5;
-    const baseFee = 100 + ((team.members.length % baseMembers) * 25);
+    const baseFee = 125 + ((team.members.length % baseMembers) * 25);
 
 
     team.registrationFee = (baseFee * (1.029) +  .30).toString();

@@ -6,6 +6,7 @@ import {messages} from "mailgun-js";
 const apiKey =  functions.config().mailgun.api_key;
 const domain = functions.config().mailgun.domain;
 const mailgun = require('mailgun-js')({apiKey: apiKey, domain: domain});
+
 const universal = require(`${process.cwd()}/dist/server`).app;
 
 export const ssr = functions.https.onRequest(universal);
@@ -56,8 +57,9 @@ export const markTeamAsPaid = functions.firestore
     if (teamHasPaid && teamCaptain) {
       const captainEmail = teamCaptain.email;
 
+      const basePrice = 125;
       const baseMembers = (updatedTeam.league === League.COMPETITIVE) ? 4 : 5;
-      const baseFee = 125 + ((updatedTeam.members.length % baseMembers) * 25);
+      const baseFee = basePrice + ((updatedTeam.members.length % baseMembers) * 25);
       const transactionFee = ((baseFee) + baseFee * (.029) + .30)  * (.029) + .30;
       const totalPrice = (baseFee + transactionFee).toFixed(2);
 
